@@ -10,7 +10,8 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/Theme.ImcApp">
-        <activity android:name=".DashboardActivity"></activity>
+        <activity android:name=".activity_novo_usuario"></activity>
+        <activity android:name=".DashboardActivity" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">
