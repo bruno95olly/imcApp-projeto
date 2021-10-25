@@ -8,4 +8,14 @@
     <string name="login_entrar">Entrar</string>
     <string name="login_lembrar_me">lembrar-me</string>
     <string name="login_esqueci_a_senha">Esqueci a senha</string>
+    <string name="cadastro_foto">Trocar foto</string>
+    <string name="cadastro_autenticacao">Dados para autenticação</string>
+    <string name="cadastro_dados_pessoais">Dados Pessoais</string>
+    <string name="cadastro_nome">Nome</string>
+    <string name="cadastro_profissao">Profissão</string>
+    <string name="cadastro_data_nascimento">Data de Nascimento</string>
+    <string name="cadastro_altura">Altura</string>
+    <string name="cadastro_sexo">Sexo</string>
+    <string name="cadastro_feminino">Feminino</string>
+    <string name="cadastro_masculino">Masculino</string>
 </resources>
