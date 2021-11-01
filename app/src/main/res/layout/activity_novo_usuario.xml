@@ -161,14 +161,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/cadastro_data_nascimento"
-                    android:paddingBottom="24dp"
+                    android:focusable="false"
                     android:inputType="date"/>
             </com.google.android.material.textfield.TextInputLayout>
             <View
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:background="@color/principal_500"/>
-            
+
             <TextView
                 android:layout_marginTop="20dp"
                 android:layout_width="wrap_content"

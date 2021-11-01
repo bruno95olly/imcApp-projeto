@@ -1,5 +1,6 @@
 package com.example.imcapp
 
+import android.app.DatePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -7,6 +8,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.EditText
 import android.widget.RadioButton
+import java.util.*
 
 class activity_novo_usuario : AppCompatActivity() {
 
@@ -33,7 +35,46 @@ class activity_novo_usuario : AppCompatActivity() {
         editFeminino = findViewById(R.id.rdo_feminino)
 
         supportActionBar!!.title = "Nova Conta"
+
+        // Criar um calendario
+        //***Obter a data atual (hoje)
+
+        val calendario = Calendar.getInstance()
+        val dia = calendario.get(Calendar.DAY_OF_MONTH)
+        val mes = calendario.get(Calendar.MONTH)
+        val ano = calendario.get(Calendar.YEAR)
+
+        // Colocar um lisetener de click no editText data de nascimento
+        //para abrir o calendario
+        editNascimento.setOnClickListener {
+            criarDatePicker(ano, mes, dia)
+        }
     }
+
+    private fun criarDatePicker(ano: Int, mes: Int, dia: Int) {
+        val datePicker = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, _ano, _mes, _dia ->
+
+            var mesReal = _mes + 1
+
+            var diaString = "$_dia"
+            var mesString = "$mesReal"
+
+            if (mesReal < 10) {
+                mesString = "0$mesReal"
+            }
+            if (_dia < 10) {
+                diaString = "0$_dia"
+
+            }
+
+            Log.i("xxx", "$diaString/$mesString/$_ano")
+
+            editNascimento.setText("$diaString/$mesString/$_ano")
+        }, ano, mes, dia)
+
+        datePicker.show()
+    }
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_cadastro, menu)
         return true
