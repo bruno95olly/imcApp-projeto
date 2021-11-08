@@ -8,6 +8,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.EditText
 import android.widget.RadioButton
+import android.widget.Toast
 import java.util.*
 
 class activity_novo_usuario : AppCompatActivity() {
@@ -82,7 +83,20 @@ class activity_novo_usuario : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(validarCampos()){
+            val arquivo = getSharedPreferences("usuario", MODE_PRIVATE)
+            val editor = arquivo.edit()
 
+            editor.putString("email", editEmail.text.toString())
+            editor.putString("senha", editSenha.text.toString())
+            editor.putString("nome", editNome.text.toString())
+            editor.putString("profissao", editProfissao.text.toString())
+            editor.putFloat("altura", editAltura.text.toString().toFloat())
+            editor.putString("nascimento", editNascimento.text.toString())
+            editor.putString("sexo", if(editMasculino.isChecked) "M" else "F")
+            editor.apply()
+
+            Toast.makeText(this, "Usuario Cadastrado com sucesso!", Toast.LENGTH_SHORT).show()
+            finish()
         }
         else{
 
@@ -101,6 +115,26 @@ class activity_novo_usuario : AppCompatActivity() {
 
         if(editSenha.text.isEmpty()){
             editSenha.error = "Senha é obrigatório"
+            valido = false
+        }
+
+        if(editNome.text.isEmpty()){
+            editNome.error = "Nome é obrigatório"
+            valido = false
+        }
+
+        if(editAltura.text.isEmpty()){
+            editAltura.error = "Altura é obrigatório"
+            valido = false
+        }
+
+        if(editNascimento.text.isEmpty()){
+            editNascimento.error = "Nascimento é obrigatório"
+            valido = false
+        }
+
+        if(!editMasculino.isChecked && !editFeminino.isChecked){
+            editMasculino.error = "Gênero é obrigatório!"
             valido = false
         }
 
