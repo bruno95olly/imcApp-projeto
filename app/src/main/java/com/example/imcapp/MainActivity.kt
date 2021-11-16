@@ -7,6 +7,7 @@ import android.view.Menu
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.example.imcapp.utils.calcularIdade
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,6 +20,8 @@ class MainActivity : AppCompatActivity() {
 
 
         buttonEntrar.setOnClickListener{
+
+            calcularIdade("20-06-2000")
 
             val arquivo = getSharedPreferences("usuario", MODE_PRIVATE)
             val emailView = arquivo.getString("email", "")

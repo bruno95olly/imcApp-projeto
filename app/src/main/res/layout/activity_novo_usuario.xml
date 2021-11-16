@@ -36,7 +36,6 @@
             android:layout_gravity="center"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
             android:textColor="@color/principal_700"/>
-
     </LinearLayout>
     <ScrollView
         android:layout_width="match_parent"
