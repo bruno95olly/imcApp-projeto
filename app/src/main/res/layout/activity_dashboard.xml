@@ -52,6 +52,7 @@
             android:layout_marginTop="10dp">
 
             <TextView
+                android:id="@+id/tv_dash_imc"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
@@ -69,6 +70,7 @@
 
                 />
             <TextView
+                android:id="@+id/tv_dash_idade"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
@@ -79,6 +81,7 @@
                 />
 
             <TextView
+                android:id="@+id/tv_dash_peso"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
@@ -151,6 +154,7 @@
         android:gravity="center_vertical"
         >
         <androidx.cardview.widget.CardView
+            android:id="@+id/card_pesar_agora"
             android:layout_width="match_parent"
             android:layout_height="120dp"
             app:cardElevation="10dp"
